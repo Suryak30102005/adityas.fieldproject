@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Instagram Downloader</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <!-- Hamburger menu -->
+  <div class="hamburger" onclick="openNav()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  
+  <!-- Side navigation -->
+  <div id="mySidenav" class="side-nav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/">Pro Instagram Downloader</a>
+    <a href="/audio">Instagram Audio Downloader</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+  
+  <header>
+    <h1>Pro Instagram Downloader</h1>
+  </header>
+  
+  <div class="container">
+    <section class="download-section fade-in">
+      <h2>Download Media</h2>
+      <form id="download-form" action="{{ url_for('download_media') }}" method="post">
+        <input type="text" name="url" id="url-input" placeholder="Enter Instagram post URL" required>
+        <label for="brand-select">Select Brand:</label>
+        <select name="brand" id="brand-select" required>
+          <option value="krishv.things">krishv.things</option>
+          <option value="krishv.dev">krishv.dev</option>
+        </select>
+        <button type="submit" id="download-btn">Download</button>
+      </form>
+      <div id="notification" class="notification hidden"></div>
+    </section>
+  </div>
+  
+ 
+  
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
